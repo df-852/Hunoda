@@ -1,2 +1,2 @@
-# Hunoda
-Static website
+# hunoda
+Static company webpage
