@@ -6,11 +6,12 @@ on:
       - main
 
 permissions:
-  contents: write  # For auto-commit
+  contents: write
   actions: read
+  id-token: write
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}  # Prevent overlapping runs
+  group: $$   {{ github.workflow }}-   $${{ github.ref }}
 
 jobs:
   minify:
