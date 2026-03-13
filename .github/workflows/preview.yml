@@ -8,6 +8,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  id-token: write  # Added for deployment action auth
 
 jobs:
   deploy-preview:
@@ -16,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Minify files
+      - name: Minify files (optional for preview)
         uses: asherf/minify-action@v1.0.2
         with:
           directory: '.'
