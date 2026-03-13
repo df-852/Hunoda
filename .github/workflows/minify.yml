@@ -6,11 +6,11 @@ on:
       - main
 
 permissions:
-  contents: write  # For auto-commit
+  contents: write
   actions: read
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}  # Prevent overlapping runs
+  group: $$   {{ github.workflow }}-   $${{ github.ref }}
 
 jobs:
   minify:
@@ -25,7 +25,7 @@ jobs:
           directory: '.'
           overwrite: true
           filetypes: '*.html,*.css,*.js'
-          all_files: true  # Force minify all matching files, not just changed
+          all_files: true  # Test for full minification
 
       - name: Auto commit minified files
         uses: stefanzweifel/git-auto-commit-action@v5
