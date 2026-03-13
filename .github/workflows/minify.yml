@@ -10,7 +10,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: $$   {{ github.workflow }}-   $${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   minify:
@@ -20,12 +20,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Minify files
-        uses: nizarmah/auto-minify@v3
+        uses: asherf/minify-action@v1
         with:
           directory: '.'
-          overwrite: true
-          filetypes: '*.html,*.css,*.js'
-          all_files: true  # Test for full minification
+          output: '.'
+          html: true
+          css: true
+          js: true
 
       - name: Auto commit minified files
         uses: stefanzweifel/git-auto-commit-action@v5
