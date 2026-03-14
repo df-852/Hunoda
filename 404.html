@@ -46,15 +46,22 @@
     }
 
     .message-container p {
-      font-size: clamp(16px, 4vw, 24px);
       margin: 10px 0;
       line-height: 1.4;
+    }
+
+    .hey-text {
+      font-size: clamp(19.2px, 4.8vw, 28.8px); /* 20% larger than base */
+    }
+
+    .there-you-go {
+      font-size: clamp(12.8px, 3.2vw, 19.2px); /* 20% smaller than base */
     }
 
     .message-container a {
       color: inherit;
       text-decoration: underline;
-      font-size: clamp(16px, 4vw, 24px);
+      font-size: inherit; /* Inherits from parent */
       transition: opacity 0.2s ease;
     }
 
@@ -87,8 +94,8 @@
     <h1 class="logo-text">HUNODA</h1>
     
     <div class="message-container">
-      <p>Hey! What are you doing here buddy?</p>
-      <p><a href="/">Here you go</a></p>
+      <p class="hey-text">Hey! What are you doing here buddy?</p>
+      <p class="there-you-go"><a href="/">There you goes &gt;&gt;</a></p>
     </div>
   </main>
 
