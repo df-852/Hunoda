@@ -1,31 +1,109 @@
-<!doctype html>
-<html lang=en>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset=UTF-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>HUNODA - Ooops, Page Not Found!</title>
-<link rel=preload href=/style.css as=style>
-<link rel=preload href=/script.js as=script>
-<meta http-equiv=Content-Security-Policy content="default-src 'self'; connect-src 'self' https://api.sunrise-sunset.org https://www.googletagmanager.com https://www.google-analytics.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com">
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/x-icon href=/favicon.ico>
-<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=192x192 href=/android-chrome-192x192.png>
-<link rel=icon type=image/png sizes=512x512 href=/android-chrome-512x512.png>
-<link rel=stylesheet href=/style.css>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1TVNDQB0D5"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-1TVNDQB0D5")</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUNODA - Page Not Found</title>
+
+  <!-- Preload for performance -->
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="script.js" as="script">
+
+  <!-- CSP (matches homepage with Cloudflare) -->
+  <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self'; 
+                 connect-src 'self' https://api.sunrise-sunset.org https://www.googletagmanager.com https://www.google-analytics.com https://cloudflareinsights.com; 
+                 script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; 
+                 style-src 'self' 'unsafe-inline'; 
+                 font-src 'self' data:; 
+                 img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com">
+
+  <!-- Favicons (relative paths) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+  <!-- External CSS (same as homepage) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TVNDQB0D5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1TVNDQB0D5');
+  </script>
+
+  <style>
+    /* 404-specific styles that extend homepage CSS */
+    .message-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .message-container p {
+      font-size: clamp(16px, 4vw, 24px);
+      margin: 10px 0;
+      line-height: 1.4;
+    }
+
+    .message-container a {
+      color: inherit;
+      text-decoration: underline;
+      font-size: clamp(16px, 4vw, 24px);
+      transition: opacity 0.2s ease;
+    }
+
+    .message-container a:hover {
+      opacity: 0.8;
+    }
+
+    .message-container a:visited {
+      color: inherit;
+    }
+
+    /* Ensure footer stays at bottom */
+    body {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-<main role=main>
-<h1 class=logo-text aria-label="HUNODA logo">HUNODA</h1>
-<p style="font-size:clamp(16pt, 4vw, 24pt);text-align:center;margin-top:20px">Ooops! Seems you've got lost! <a href=/ style=color:inherit;text-decoration:underline>Go back</a></p>
-</main>
-<footer style=position:absolute;bottom:10px;left:0;width:100%;text-align:center;font-size:11px;opacity:.6;color:#fff>
-This site uses Google Analytics cookies. <a href=/privacy style=color:inherit;text-decoration:underline>Privacy Policy</a>
-<span style=position:absolute;right:20px>© Copyright Hunoda 2026</span>
-</footer>
-<script defer src=/script.js></script>
+  <main role="main">
+    <h1 class="logo-text">HUNODA</h1>
+    
+    <div class="message-container">
+      <p>Hey! What are you doing here buddy?</p>
+      <p><a href="/">Here you go</a></p>
+    </div>
+  </main>
+
+  <!-- Footer (exactly matching homepage) -->
+  <footer>
+    <div class="footer-left">
+      <span>This site uses Google Analytics cookies.</span>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+    <div class="footer-right">
+      <span>© Copyright Hunoda 2026</span>
+    </div>
+  </footer>
+
+  <!-- External JS (same as homepage for dynamic background) -->
+  <script defer src="script.js"></script>
 </body>
 </html>
