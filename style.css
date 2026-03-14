@@ -1,104 +1,25 @@
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #000000;
-    text-size-adjust: none;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFFFFF;
+  text-size-adjust: none;
+  transition: background-color 0.5s ease;
+}
 
-  .header {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .logo-text {
-    font-size: clamp(19pt, 5vw, 29pt);
-    font-weight: 700;
-    color: #FF4500;
-    margin: 0 20px 0 0;
-    white-space: nowrap;
-    cursor: pointer;
-  }
-
-  .content {
-    flex: 1;
-    padding: 0 20px 40px;
-    max-width: 800px;
-    text-align: justify;
-    font-size: calc(11pt * 0.9);
-    line-height: 1.5;
-  }
-
-  .content h2 {
-    font-size: calc(14pt * 0.9);
-    margin-top: 20px;
-  }
-
-  .content p {
-    margin: 10px 0;
-  }
-
-  /* Footer styles - simplified and robust */
-  footer {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    font-size: calc(11pt * 0.9);
-    opacity: 0.6;
-    color: #000000;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-  }
-
-  footer a {
-    color: inherit;
-    text-decoration: underline;
-    white-space: nowrap;
-  }
-
-  footer a:visited {
-    color: inherit;
-  }
-
-  footer span {
-    color: inherit;
-    white-space: nowrap;
-  }
-
-  /* Mobile styles */
-  @media (max-width: 600px) {
-    .header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .logo-text {
-      margin: 0 0 10px 0;
-    }
-
-    footer {
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      gap: 10px;
-    }
-
-    footer a, footer span {
-      white-space: normal;
-    }
-  }
-</style>
+.logo-text {
+  font-size: clamp(70%, 9vw, 18mm);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.1;
+  margin: 0;
+  padding: 20px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
