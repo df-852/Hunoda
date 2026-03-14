@@ -1,1 +1,92 @@
-html,body{color:#fff;text-size-adjust:none;justify-content:center;align-items:center;width:100%;height:100%;margin:0;padding:0;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;transition:background-color .5s;display:flex;overflow:hidden}.logo-text{text-align:center;word-wrap:break-word;max-width:90%;margin:0;padding:20px;font-size:clamp(70%,9vw,18mm);font-weight:700;line-height:1.1}footer{opacity:.6;color:#fff;box-sizing:border-box;text-align:center;flex-direction:column;align-items:center;gap:8px;width:100%;padding:0 20px;font-size:11px;display:flex;position:absolute;bottom:10px;left:0}.footer-left{text-align:center;flex-wrap:wrap;justify-content:center;align-items:center;gap:5px;display:flex}.footer-left a,.footer-left a:visited{color:inherit;white-space:nowrap;text-decoration:underline}.footer-left span{white-space:nowrap}.footer-right{text-align:center;white-space:nowrap}@media (width<=480px){footer{gap:8px}.footer-left{gap:5px}.footer-left a,.footer-left a:visited,.footer-left span{white-space:normal}}
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000000;
+    text-size-adjust: none;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .logo-text {
+    font-size: clamp(19pt, 5vw, 29pt);
+    font-weight: 700;
+    color: #FF4500;
+    margin: 0 20px 0 0;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .content {
+    flex: 1;
+    padding: 0 20px 40px;
+    max-width: 800px;
+    text-align: justify;
+    font-size: calc(11pt * 0.9);
+    line-height: 1.5;
+  }
+
+  .content h2 {
+    font-size: calc(14pt * 0.9);
+    margin-top: 20px;
+  }
+
+  .content p {
+    margin: 10px 0;
+  }
+
+  /* Footer styles - using flexbox for better control */
+  footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: calc(11pt * 0.9);
+    opacity: 0.6;
+    color: #000000;
+    border-top: none;
+  }
+
+  footer a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  footer span {
+    color: inherit;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 600px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .logo-text {
+      margin: 0 0 10px 0;
+    }
+
+    footer {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  }
+</style>
