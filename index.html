@@ -42,7 +42,7 @@
     gtag('config', 'G-1TVNDQB0D5');
   </script>
 
-  <!-- JSON-LD Schema for SEO (updated description and contact) -->
+  <!-- JSON-LD Schema for SEO (Organization with Contact) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,14 +52,22 @@
     "description": "Pre and post-acquisition advisory for Asian SMEs. No corporate fluff. Just real, battle-tested guidance from founders who have been there. Let's talk",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://hunoda.com/?q={search_term_string}",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://hunoda.com/?q={search_term_string}"
+      },
       "query-input": "required name=search_term_string"
     },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer support",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "HUNODA",
       "email": "hello@hunoda.com",
-      "url": "mailto:hello@hunoda.com"
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "hello@hunoda.com",
+        "url": "https://hunoda.com"
+      }
     }
   }
   </script>
