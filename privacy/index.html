@@ -13,6 +13,7 @@
                  style-src 'self' 'unsafe-inline'; 
                  font-src 'self' data:; 
                  img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com">
+
   <style>
     html, body {
       margin: 0;
@@ -64,7 +65,7 @@
       margin: 10px 0;
     }
 
-    /* Privacy page footer - independent styling */
+    /* Footer styles - fixed alignment */
     .privacy-footer {
       width: 100%;
       padding: 20px;
@@ -75,13 +76,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: none;
     }
 
     .privacy-footer a {
       color: inherit;
       text-decoration: underline;
-      white-space: nowrap;
     }
 
     .privacy-footer a:visited {
@@ -90,10 +89,9 @@
 
     .privacy-footer span {
       color: inherit;
-      white-space: nowrap;
     }
 
-    /* Mobile styles for privacy page */
+    /* Mobile styles */
     @media (max-width: 600px) {
       .header {
         flex-direction: column;
@@ -106,14 +104,8 @@
 
       .privacy-footer {
         flex-direction: column;
-        justify-content: center;
-        text-align: center;
         gap: 10px;
-      }
-
-      .privacy-footer a,
-      .privacy-footer span {
-        white-space: normal;
+        text-align: center;
       }
     }
   </style>
