@@ -11,66 +11,53 @@
 ## Technical Architecture
 
 ### Repository Structure
-
-
-
-
-
-**Project Overview**
-
-Site: https://hunoda.com
-Hosting: GitHub Pages (main branch)
-Domain: Cloudflare (transferred from GoDaddy)
-Email: iCloud custom domain (hello@hunoda.com)
-Analytics: Google Analytics (G-1TVNDQB0D5)
-Background: Dynamic day/night (orange #FF4500 / black #000000) based on Hong Kong sunrise/sunset
-
-**Technical Architecture**
-
-**Repository Structure**
 Hunoda/
-├── index.html              # Homepage
-├── style.css               # Global styles (homepage + shared)
-├── script.js               # Background color logic
+├── index.html # Homepage
+├── style.css # Global styles (homepage + shared)
+├── script.js # Background color logic
 ├── privacy/
-│   └── index.html          # Privacy page (clean URL)
-├── 404.html                # Custom error page
-├── favicon files           # All favicon sizes
+│ └── index.html # Privacy page (clean URL)
+├── 404.html # Custom error page
+├── favicon files # All favicon sizes
 ├── robots.txt
 ├── sitemap.xml
-└── .github/workflows/      # CI/CD (minify automation)
+└── .github/workflows/ # CI/CD (minify automation)
+├── documentation/
+│ └── AI-Collaboration-Guide.md # AI Collaboration Guide
+text
 
-**Key Files & Their Purpose**
+### Key Files & Their Purpose
+| File | Purpose | Critical Rules |
+|------|---------|----------------|
+| `index.html` | Homepage | Stacked footer, HUNODA logo centered |
+| `style.css` | Global styling | Must not affect privacy page uniquely |
+| `script.js` | Dynamic background | Fetches sunrise-sunset API, sets body bg |
+| `privacy/index.html` | Privacy policy | Uses `.privacy-footer` class, not global footer |
+| `404.html` | Error page | Must match homepage styling exactly |
 
-index.html	Homepage	Stacked footer, HUNODA logo centered
-style.css	Global styling	Must not affect privacy page uniquely
-script.js	Dynamic background	Fetches sunrise-sunset API, sets body bg
-privacy/index.html	Privacy policy	Uses .privacy-footer class, not global footer
-404.html	Error page	Must match homepage styling exactly
-Visual Style Guide
-Colors
-Element	Day	Night	Notes
-Background	#FF4500 (orange)	#000000 (black)	Dynamic via API
-Logo text	White (#FFFFFF)	White (#FFFFFF)	Never changes
-Privacy page logo	Orange (#FF4500)	Black (#000000)	Dynamic via JS
-Body text (privacy)	#000000	#000000	Static
-Links	Inherit color + underline	Inherit color + underline	No visited color change
-Typography
-Font family: "Helvetica Neue", Helvetica, Arial, sans-serif
+## Visual Style Guide
 
-Logo size: clamp(70%, 9vw, 18mm)
+### Colors
+| Element | Day | Night | Notes |
+|---------|-----|-------|-------|
+| Background | `#FF4500` (orange) | `#000000` (black) | Dynamic via API |
+| Logo text (homepage) | White (`#FFFFFF`) | White (`#FFFFFF`) | Never changes |
+| Privacy page logo | Orange (`#FF4500`) | Black (`#000000`) | Dynamic via JS |
+| Body text (privacy) | `#000000` | `#000000` | Static |
+| Links | Inherit color + underline | Inherit color + underline | No visited color change |
 
-Body text (homepage footer): 11px
+### Typography
+- **Font family:** `"Helvetica Neue", Helvetica, Arial, sans-serif`
+- **Logo size:** `clamp(70%, 9vw, 18mm)`
+- **Body text (homepage footer):** `11px`
+- **Body text (privacy page):** `calc(11pt * 0.9)` (10% smaller than homepage)
+- **404 page "Hey!":** 20% larger than base
+- **404 page link:** 20% smaller than base
 
-Body text (privacy page): calc(11pt * 0.9) (10% smaller than homepage)
+### Footer Specifications
 
-404 page "Hey!": 20% larger than base
-
-404 page link: 20% smaller than base
-
-Footer Specifications
-Homepage Footer
-css
+#### Homepage Footer
+```css
 footer {
   position: absolute;
   bottom: 10px;
@@ -181,3 +168,5 @@ When adding blog/articles: Use /blog/ folder with index.html per post
 Readiness assessment tool: Will need JS framework (React/Vue) or vanilla JS
 
 Maintain CSP updates with any new external services
+
+Last updated: March 15, 2026
