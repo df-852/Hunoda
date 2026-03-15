@@ -71,8 +71,8 @@ footer {
   gap: 8px;
   text-align: center;
 }
-Privacy Page Footer
-css
+
+#### Privacy Page Footer
 .privacy-footer {
   width: 100%;
   padding: 20px;
@@ -84,6 +84,7 @@ css
   align-items: center;
 }
 /* Mobile: switches to column */
+
 Responsive Breakpoints
 Breakpoint	Behavior
 ≤480px	Homepage footer allows text wrapping
@@ -169,5 +170,3 @@ Readiness assessment tool: Will need JS framework (React/Vue) or vanilla JS
 Maintain CSP updates with any new external services
 
 Last updated: March 15, 2026
-
-t
