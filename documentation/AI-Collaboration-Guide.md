@@ -3,6 +3,7 @@
 ## 1) Version History
 - 2026-03-14: Initial guide created.
 - 2026-03-15: Added Version History, Branching and Workflow, Error Handling and Testing, Tool Usage sections. Updated repo structure, output examples, dates. Improved clarity for non-technical users.
+- 2026-03-15: Added Path Strategy section (critical for 404 pages). Updated Error Handling with 404-specific testing.
 
 ## 2) Project Overview
 - **Site:** `https://hunoda.com`
@@ -119,7 +120,36 @@ The CSP must always include:
 - Implement via folder structure: `privacy/index.html`
 - All internal links must use clean URLs
 
-## 5) Other Considerations
+## 5) Path Strategy (Critical)
+
+Different pages require different path strategies for loading resources:
+
+| Page Type | Path Type | Example | Why |
+|-----------|-----------|---------|-----|
+| `index.html` | Relative or Absolute | `style.css` or `/style.css` | Always at root |
+| `privacy/index.html` | Relative or Absolute | `../style.css` or `/style.css` | In subfolder, but absolute works |
+| **`404.html`** | **Absolute ONLY** | **`/style.css`** | Can be triggered from ANY URL path |
+
+### Critical Rule for 404.html
+
+Always use **absolute paths** (with leading `/`) for all resources in `404.html`:
+
+```html
+<!-- CORRECT - Absolute paths with leading slash -->
+<link rel="stylesheet" href="/style.css">
+<script defer src="/script.js"></script>
+<link rel="icon" type="image/png" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+```
+
+```html
+<!-- WRONG - Relative paths will FAIL on 404 pages -->
+<link rel="stylesheet" href="style.css">  <!-- Looks in wrong directory -->
+<script defer src="script.js"></script>    <!-- Looks in wrong directory -->
+```
+
+## 6) Other Considerations
 
 ### Error Handling and Testing
 - Always validate code for syntax errors before outputting (e.g., using code_execution tool).
@@ -132,7 +162,7 @@ The CSP must always include:
 - Use `render_inline_citation` for sources from searches.
 - Use other tools (e.g., `x_keyword_search` for social insights) when relevant to query.
 
-## 6) Common Fixes & Lessons Learned
+## 7) Common Fixes & Lessons Learned
 
 ### Issue: Footer alignment on privacy page
 - **Fix:** Use `.privacy-footer` class with `display: flex; justify-content: space-between;`
@@ -154,7 +184,7 @@ The CSP must always include:
 ### Issue: Font size inconsistency between pages
 - **Fix:** Use explicit `11px` for all footer text, not relative units.
 
-## 7) Deployment & CI/CD
+## 8) Deployment & CI/CD
 
 ### Minify Workflow
 - Runs on push to main
@@ -184,7 +214,7 @@ The CSP must always include:
 - Readiness assessment tool: Will need JS framework (React/Vue) or vanilla JS
 - Maintain CSP updates with any new external services
 
-## 8) Guide Maintenance Protocol
+## 9) Guide Maintenance Protocol
 
 ### Purpose
 The Guide Maintenance Section defines the standard process for creating, updating, and maintaining the `AI-COLLABORATION-GUIDE.md` file. Following this protocol ensures consistent formatting, accurate documentation, and efficient collaboration. 
