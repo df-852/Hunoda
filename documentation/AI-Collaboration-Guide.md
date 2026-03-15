@@ -1,6 +1,10 @@
 # HUNODA Project - AI Collaboration Guide
 
-## Project Overview
+## 1) Version History
+- 2026-03-14: Initial guide created.
+- 2026-03-15: Added Version History, Branching and Workflow, Error Handling and Testing, Tool Usage sections. Updated repo structure, output examples, dates. Improved clarity for non-technical users.
+
+## 2) Project Overview
 - **Site:** `https://hunoda.com`
 - **Hosting:** GitHub Pages (`main` branch)
 - **Domain:** Cloudflare (transferred from GoDaddy)
@@ -8,7 +12,7 @@
 - **Analytics:** Google Analytics (`G-1TVNDQB0D5`)
 - **Background:** Dynamic day/night (orange `#FF4500` / black `#000000`) based on Hong Kong sunrise/sunset
 
-## Technical Architecture
+## 3) Technical Architecture
 
 ### Repository Structure
 
@@ -41,7 +45,7 @@
 | `privacy/index.html` | Privacy policy | Uses `.privacy-footer` class, not global footer |
 | `404.html` | Error page | Must match homepage styling exactly |
 
-## Visual Style Guide
+## 4) Visual Style Guide
 
 ### Colors
 | Element | Day | Night | Notes |
@@ -115,7 +119,20 @@ The CSP must always include:
 - Implement via folder structure: `privacy/index.html`
 - All internal links must use clean URLs
 
-## Common Fixes & Lessons Learned
+## 5) Other Considerations
+
+### Error Handling and Testing
+- Always validate code for syntax errors before outputting (e.g., using code_execution tool).
+- If an error occurs, report it in the summary with steps to fix.
+- Test workflows/previews before merging — use PR comments for URLs/artifacts.
+
+### Tool Usage
+- Use `code_execution` for testing code snippets or validating outputs.
+- Use `web_search` or `browse_page` for research (e.g., standards, benchmarks).
+- Use `render_inline_citation` for sources from searches.
+- Use other tools (e.g., `x_keyword_search` for social insights) when relevant to query.
+
+## 6) Common Fixes & Lessons Learned
 
 ### Issue: Footer alignment on privacy page
 - **Fix:** Use `.privacy-footer` class with `display: flex; justify-content: space-between;`
@@ -137,7 +154,7 @@ The CSP must always include:
 ### Issue: Font size inconsistency between pages
 - **Fix:** Use explicit `11px` for all footer text, not relative units.
 
-## Deployment & CI/CD
+## 7) Deployment & CI/CD
 
 ### Minify Workflow
 - Runs on push to main
@@ -167,7 +184,7 @@ The CSP must always include:
 - Readiness assessment tool: Will need JS framework (React/Vue) or vanilla JS
 - Maintain CSP updates with any new external services
 
-## Guide Maintenance Protocol
+## 8) Guide Maintenance Protocol
 
 ### Purpose
 The Guide Maintenance Section defines the standard process for creating, updating, and maintaining the `AI-COLLABORATION-GUIDE.md` file. Following this protocol ensures consistent formatting, accurate documentation, and efficient collaboration. 
