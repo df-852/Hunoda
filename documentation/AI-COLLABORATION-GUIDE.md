@@ -10,7 +10,6 @@ Background: Dynamic day/night (orange #FF4500 / black #000000) based on Hong Kon
 **Technical Architecture**
 
 **Repository Structure**
-text
 Hunoda/
 ├── index.html              # Homepage
 ├── style.css               # Global styles (homepage + shared)
@@ -22,8 +21,9 @@ Hunoda/
 ├── robots.txt
 ├── sitemap.xml
 └── .github/workflows/      # CI/CD (minify automation)
-Key Files & Their Purpose
-File	Purpose	Critical Rules
+
+**Key Files & Their Purpose**
+
 index.html	Homepage	Stacked footer, HUNODA logo centered
 style.css	Global styling	Must not affect privacy page uniquely
 script.js	Dynamic background	Fetches sunrise-sunset API, sets body bg
